@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/usr/home/msoto'
+let g:netrw_dirhist_9='/usr/home/msoto/.vim/snippets/jsx'
+let g:netrw_dirhist_8='/usr/home/msoto/.vim/snippets'
+let g:netrw_dirhist_7='/usr/home/msoto/.vim/snippets/html'
+let g:netrw_dirhist_6='/usr/home/msoto/.vim/snippets'
+let g:netrw_dirhist_5='/usr/home/msoto/.vim/snippets/html'
+let g:netrw_dirhist_4='/usr/home/msoto/.vim/snippets'
+let g:netrw_dirhist_3='/usr/home/msoto/.vim/snippets/html'
+let g:netrw_dirhist_2='/usr/home/msoto/.vim/snippets'
+let g:netrw_dirhist_1='/usr/home/msoto/.vim/snippets/html'
