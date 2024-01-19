@@ -1,0 +1,24 @@
+. /etc/ksh.kshrc
+export LANG=en_US.ISO8859-1
+export PS1='$(echo -e "\033[36m.---\033[32m") $PWD 
+$(echo -e "\033[36m|_\033[33m\$: \033[00m")'
+
+# Manpath
+#export MANPATH="/usr/share/man:/usr/local/share/man:$MANPATH"
+
+# Set shell to vi mode
+set -o vi
+
+# My aliases
+alias t='tmux attach'
+alias ll='ls -l'
+alias lll='ls -tc1'
+alias vi='/usr/local/bin/vim'
+alias view='/usr/local/bin/vim -R'
+alias xcolors='xcolors -g 700x470'
+alias feh='feh -g 800x600+0+100 -.'
+alias speak='/home/msoto/bin/speak.sh'
+alias jack='/home/msoto/bin/jack.sh'
+alias s='su -'
+
+. ~/.private_aliases

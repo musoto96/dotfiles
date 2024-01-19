@@ -41,9 +41,9 @@ noremap <F4> :set number!<cr>:set relativenumber!<cr>
 noremap <F5> :source $MYVIMRC<cr>
 
 " Snippets
-noremap ,html :read ~/.vim/snippets/html/boilerplate.html<cr>6j3wa
+noremap ,html :read ~/.vim/snippets/html/boilerplate.html<cr>kdd6j3wa
 noremap <> diw:read ~/.vim/snippets/html/tag.html<cr>kJp3lpT>i
-noremap ,rafce diw:read ~/.vim/snippets/jsx/rafce.jsx<cr>kJjf'pbg~l02jf<Space>pGf;P5ko<Tab><Tab><Tab>
+noremap ,rafce diw:read ~/.vim/snippets/jsx/rafce.jsx<cr>kJjf/pbg~l02jf<Space>pGf;P5ko<Tab><Tab><Tab>
 
 " Notes
 au BufNewFile,BufRead *.txt set filetype=sh
