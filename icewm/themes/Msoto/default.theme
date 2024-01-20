@@ -1,0 +1,183 @@
+ThemeDescription="Theme edited from default theme"
+ThemeAuthor="Moises Soto <musoto96@gmail.com>"
+
+Look=pixmap
+TitleBarHeight=17 # [0-128]
+TitleBarCentered=1
+TitleBarJustify=0
+
+TitleButtonsLeft="sd"
+TitleButtonsRight="xmirh"
+TitleButtonsSupported="sxmihrd"
+
+BorderSizeX=5
+BorderSizeY=5
+CornerSizeX=10
+CornerSizeY=10
+DlgBorderSizeX=2
+DlgBorderSizeY=2
+
+
+#######
+#E15050
+
+ColorNormalBorder="rgb:A0/A0/A0"
+
+#ColorActiveBorder="rgb:98/ab/d2"
+#ColorActiveBorder="rgb:FF/E6/00" # Yellow
+#ColorActiveBorder="rgb:DE/31/63" # Pink
+ColorActiveBorder="rgb:50/71/B5" # Dark Blue
+#ColorActiveBorder="rgb:66/95/F7" # Blue
+
+ColorActiveTitleBar="rgb:cf/cf/ff" # Blue gray
+#ColorActiveTitleBar="rgb:66/95/F7" # Blue
+#ColorActiveTitleBar="rgb:50/71/B5" # Dark Blue
+
+ColorNormalTitleBar="rgb:cf/cf/cf"
+#ColorNormalButton="rgb:C0/C0/C0"
+#ColorNormalButton="rgb:66/95/F7" # Blue
+ColorNormalButton="rgb:9D/B9/F5" # Light Blue
+ColorNormalTitleBarText="rgb:00/00/00"
+ColorActiveTitleBarText="rgb:00/00/00"
+ColorNormalMenu="rgb:D7/D7/D7"
+ColorActiveMenuItem="rgb:EB/EB/EB"
+ColorNormalMenuItemText="rgb:00/00/00"
+ColorActiveMenuItemText="rgb:00/00/00"
+ColorDisabledMenuItemText="rgb:80/80/80"
+ColorMoveSizeStatus="rgb:C0/C0/C0"
+ColorMoveSizeStatusText="rgb:00/00/00"
+
+#ColorDefaultTaskBar="rgb:D7/D7/D7"
+ColorDefaultTaskBar="rgb:66/95/F7" # Blue
+ColorDefaultTaskBar="rgb:9D/B9/F5" # Light Blue
+ColorDefaultTaskBar="rgb:C6/D3/EF" # Light Blue
+
+ColorNormalTaskBarApp="rgb:D7/D7/D7"
+
+ColorNormalTaskBarAppText="rgb:00/00/00"
+
+#ColorActiveTaskBarApp="rgb:EB/EB/EB"
+#ColorActiveTaskBarApp="rgb:DE/31/63" # Pink
+ColorActiveTaskBarApp="rgb:C9/61/ED" # Light Purple
+
+ColorActiveTaskBarAppText="rgb:00/00/00"
+ColorMinimizedTaskBarApp="rgb:A0/A0/A0"
+ColorMinimizedTaskBarAppText="rgb:00/00/00"
+ColorListBox="rgb:CC/CC/CC"
+ColorListBoxText="rgb:00/00/00"
+ColorListBoxSelection="rgb:CC/CC/FF"
+ColorListBoxSelectionText="rgb:00/00/00"
+ColorScrollBar="rgb:C0/C0/C0"
+ColorScrollBarSlider="rgb:C0/C0/C0"
+ColorScrollBarButtonArrow="rgb:C0/C0/C0"
+
+#######
+
+# Fonts
+TitleFontNameXft            = "AcPlus IBM EGA 8x8:style=bold:size=6"
+MenuFontNameXft             = "AcPlus IBM EGA 8x8:style=Regular:size=6"
+MinimizedWindowFontNameXft  = "AcPlus IBM EGA 8x8:style=Regular:size=6"
+ActiveButtonFontNameXft     = "AcPlus IBM EGA 8x8:style=Regular:size=6"
+LabelFontNameXft            = "AcPlus IBM EGA 8x8:style=Regular:size=6"
+NormalButtonFontNameXft     = "AcPlus IBM EGA 8x8:style=Regular:size=6"
+QuickSwitchFontNameXft      = "AcPlus IBM EGA 8x8:style=Regular:size=6"
+ListBoxFontNameXft          = "AcPlus IBM EGA 8x8:style=Regular:size=6"
+StatusFontNameXft           = "AcPlus IBM EGA 8x8:style=Regular:size=6"
+ToolTipFontNameXft          = "AcPlus IBM EGA 8x8:style=Regular:size=6"
+InputFontNameXft            = "AcPlus IBM EGA 8x8:style=Regular:size=8"
+
+ActiveTaskBarFontNameXft    = "AcPlus IBM EGA 8x8:style=bold:size=6"
+NormalTaskBarFontNameXft    = "AcPlus IBM EGA 8x8:style=Regular:size=6"
+
+ClockFontNameXft            = "AcPlus IBM EGA 8x8:style=Regular:size=6"
+ApmFontNameXft              = "AcPlus IBM EGA 8x8:style=Regular:size=6"
+
+ActiveWorkspaceFontNameXft  = "AcPlus IBM EGA 8x8:style=Regular:size=8"
+NormalWorkspaceFontNameXft  = "AcPlus IBM EGA 8x8:style=Regular:size=6"
+
+# Background
+#DesktopBackgroundCenter=1
+#DesktopBackgroundScaled=1
+
+#  Desktop background image or directory of images
+#DesktopBackgroundImage="/home/msoto/documents/bsd-wallpaper.png"
+#CycleBackgroundsPeriod=0 # Seconds between background images [0-2147483647]
+#ShuffleBackgroundImages=0 # 0/1
+
+ColorApm="rgb:00/00/00"
+ColorApmBattery="rgb:E2/B9/8D"
+ColorApmLine="rgb:00/FF/00"
+#ColorApmText="rgb:E2/B9/8D"
+#ColorApmText="rgb:DE/31/63" # Pink
+ColorApmText="rgb:C9/61/ED" # Light Purple
+#ColorClockText="rgb:E2/B9/8D"
+#ColorClockText="rgb:DE/31/63" # Pink
+ColorClockText="rgb:C9/61/ED" # Light Purple
+TaskBarClockLeds=0 # 0/1
+TaskBarGraphHeight=20 # [16-1000]
+
+# Alternative to dmenu
+#EnableAddressBar=1 # 0/1
+#KeySysAddressBar="Super+Space"
+
+#HideBordersMaximized=0 # 0/1
+#HideTitleBarWhenMaximized=1 # 0/1
+#HorizontalEdgeSwitch=0 # 0/1
+#IconPath="/usr/local/share/icons:/usr/local/share/pixmaps:/usr/share/icons:/usr/share/pixmaps:"
+#MinimizeToDesktop=1 # 0/1
+#KeySysCollapseTaskBar="Alt+Ctrl+h"
+#KeySysDialog="Alt+Ctrl+Del"
+# KeySysHideAll="Alt+Shift+F11"
+# KeySysKeyboardNext=""
+#KeySysMenu="Super+Esc"
+#KeySysTileHorizontal="Super+y"
+#KeySysTileVertical="Super+i"
+#KeySysUndoArrange="Super+u"
+
+
+# Preferences
+#BatteryPollingPeriod=2 # [2-3600]
+#CPUStatusCommand="st -e sh -c top"
+#CPUStatusShowAcpiTempInGraph=1 # 0/1
+#CPUStatusShowCpuFreq=1 # 0/1
+#CPUStatusShowRamUsage=1 # 0/1
+#CPUStatusShowSwapUsage=1 # 0/1
+#CenterLarge=0 # 0/1
+#ClockCommand="st -e sh -c calcurse"
+#ConsiderHBorder=1 # 0/1
+#ConsiderVBorder=1 # 0/1
+
+# Workspaces
+#KeySysWorkspace1="Super+1"
+#KeySysWorkspace1TakeWin="Super+Shift+1"
+#KeySysWorkspace2="Super+2"
+#KeySysWorkspace2TakeWin="Super+Shift+2"
+#KeySysWorkspace3="Super+3"
+#KeySysWorkspace3TakeWin="Super+Shift+3"
+#KeySysWorkspace4="Super+4"
+#KeySysWorkspace4TakeWin="Super+Shift+4"
+#KeyWinClose="Super+Shift+q"
+#KeyWinMaximize="Super+k"
+#KeyWinMinimize="Super+j"
+#KeyWinMove="Super+m"
+#KeyWinTileLeft="Super+h"
+#KeyWinTileRight="Super+l"
+# Active on top?
+#MapInactiveOnTop=0 # 0/1
+
+#MouseWinMove="Super+Pointer_Button1"
+#MouseWinSize="Super+Shift+Pointer_Button1"
+
+#MailCommand="st -e sh -c mail"
+#NetStatusCommand="st -e sh -c 'netstat -w 1;read'"
+#NetworkStatusDevice="*m0"
+#TaskBarAtTop=1 # 0/1
+#TaskBarMailboxStatusBeepOnNewMail=1 # 0/1
+#TaskBarMailboxStatusCountMessages=1 # 0/1
+#TaskBarShowAPMAuto=1 # 0/1
+#TaskBarShowAPMGraph=0 # 0/1
+#TaskBarShowAPMTime=0 # 0/1
+#TaskBarShowWindowListMenu=0 # 0/1
+#TaskBarWorkspacesTop=1 # 0/1
+#TimeFormat="%c"
+#WorkspaceNames=" 1 ", " 2 ", " 3 ", " 4 "

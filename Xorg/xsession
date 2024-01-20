@@ -34,10 +34,10 @@ setxkbmap -option caps:swapescape &
 #exec /usr/local/bin/fvwm3
 #exec /usr/local/bin/fvwm
 #exec /usr/local/bin/fvwm2
-exec /usr/local/bin/fvwm
+#exec /usr/local/bin/fvwm
 #
 # DWM
 #exec /usr/local/bin/dwm
 #
 # ICEWM3
-#exec /usr/local/bin/icewm
+exec /usr/local/bin/icewm
