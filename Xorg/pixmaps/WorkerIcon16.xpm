@@ -1,0 +1,30 @@
+/* XPM */
+static char *wicon16x16[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16        7            1",
+/* colors */
+". c #000000",
+"# c #0e5bd6",
+"a c #727272",
+"b c #a5318e",
+"c c #db0d0d",
+"d c #efb917",
+"e c #ffffff",
+/* pixels */
+"################",
+"ecccccc.eaaaaaa.",
+"eeeeeee.eeeeeee.",
+"eaaaaaa.eaaaaaa.",
+"ea....a.ea....a.",
+"eaaaaaa.eaaaaaa.",
+"ea....a.eadddda.",
+"eaaaaaa.eaaaaaa.",
+"e.......e.......",
+"aaaaaaaaaaaaaaaa",
+"a..a..a..a..a..a",
+"aaaaaaaaaaaaaaaa",
+"a...aaa...###aaa",
+"abbb###cccaaa..a",
+"aaaaaaaaaaaaaaaa",
+"bbbbbbbbbbbbbbbb"
+};

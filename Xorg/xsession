@@ -2,12 +2,16 @@
 #feh --bg-fill /home/msoto/Pictures/Backgrounds/bsd-wallpaper-corner.png
 #feh --bg-fill /home/msoto/Pictures/Backgrounds/wp1878733.jpg
 #feh --bg-fill /home/msoto/Pictures/Backgrounds/y2k-1.jpg
-xsetroot -fg \#de3163 -bg \#6695f7 -bitmap /usr/X11R6/include/X11/bitmaps/cross_weave
+
+# FreeBSD
+#xsetroot -fg \#de3163 -bg \#6695f7 -bitmap /usr/X11R6/include/X11/bitmaps/cross_weave
+xsetroot -solid purple
 
 
 # Load resources
+# FreeBSD
 #/usr/X11R6/bin/xrdb -merge /home/msoto/.Xresources
-/usr/local/bin/xrdb -merge /home/msoto/.Xresources
+/usr/bin/xrdb -merge /home/msoto/.Xresources
 
 # Tap to click synaptics
 #synclient TapButton1=1 &
@@ -40,4 +44,4 @@ setxkbmap -option caps:swapescape &
 #exec /usr/local/bin/dwm
 #
 # ICEWM3
-exec /usr/local/bin/icewm
+exec /usr/bin/icewm
