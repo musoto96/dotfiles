@@ -10,15 +10,25 @@
 
 # My keybinds
 key "Super+Return"    st -g 120x35
-key "Super+p"         dmenu_run -fn "AcPlus IBM EGA 8x8:style=Regular:size=6"
+key "Super+p"         dmenu_run -fn "AcPlus IBM EGA 8x8:style=Regular:size=7"
 
 # Volume
-key "Super+Right"     /usr/sbin/mixer -s pcm +10
-key "Super+Left"      /usr/sbin/mixer -s pcm -10
+# FreeBSD
+#key "Super+Right"     /usr/sbin/mixer -s pcm +10
+#key "Super+Left"      /usr/sbin/mixer -s pcm -10
+# Linux
+key "XF86AudioLowerVolume"  amixer sset Master 5%-
+key "XF86AudioRaiseVolume"  amixer sset Master 5%+
+key "XF86AudioMute"         amixer sset Master toggle
 
 # Brightness
-key "Super+Up"        /usr/bin/backlight incr 10
-key "Super+Down"      /usr/bin/backlight decr 10
+# FreeBSD
+#key "Super+Up"        /usr/bin/backlight incr 10
+#key "Super+Down"      /usr/bin/backlight decr 10
+# Linux
+key "XF86MonBrightnessUp"        light -A 10
+key "XF86MonBrightnessDown"      light -U 10
+key "XF86ScreenSaver"            xlock
 
 # "Multimedia key" bindings for Xorg. Gather the keycodes of your
 # advanced function keys by watching the output of the xev command whilest
@@ -31,9 +41,6 @@ key "Super+Down"      /usr/bin/backlight decr 10
 # key "XF86Sleep"           /bin/sh -c "{ test -e /run/systemd/system && systemctl suspend; } ||:"
 
 # Not needed now TODO
-#key "XF86AudioLowerVolume"  amixer sset Master 5%-
-#key "XF86AudioRaiseVolume"  amixer sset Master 5%+
-#key "XF86AudioMute"         amixer sset Master toggle
 #key "XF86HomePage"          xdg-open about:blank
 #key "XF86Search"            xdg-open https://www.google.com
 #key "XF86Eject"             eject

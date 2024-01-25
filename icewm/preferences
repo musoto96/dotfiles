@@ -62,17 +62,17 @@ BatteryPollingPeriod=2 # [2-3600]
 # CPUStatusClassHint="top.XTerm"
 
 #  Combine all CPUs to one.
-# CPUStatusCombine=1 # 0/1
+CPUStatusCombine=1 # 0/1
 
 #  Command to run on CPU status.
 # CPUStatusCommand="xterm -name top -title Process\ Status -e top"
 CPUStatusCommand="st -e sh -c top"
 
 #  Show ACPI temperature in CPU status tool tip.
-# CPUStatusShowAcpiTemp=1 # 0/1
+CPUStatusShowAcpiTemp=1 # 0/1
 
 #  Show ACPI temperature in CPU status bar.
-CPUStatusShowAcpiTempInGraph=1 # 0/1
+# CPUStatusShowAcpiTempInGraph=1 # 0/1
 
 #  Show CPU frequency in CPU status tool tip.
 CPUStatusShowCpuFreq=1 # 0/1
@@ -606,13 +606,16 @@ MouseWinSize="Super+Shift+Pointer_Button1"
 NetStatusCommand="st -e sh -c 'netstat -w 1;read'"
 
 #  Show network status only for connected devices.
-# NetStatusShowOnlyRunning=0 # 0/1
+NetStatusShowOnlyRunning=1 # 0/1
 
 #  NET_WORKAREA behaviour: 0 (single/multimonitor with STRUT information, like metacity), 1 (always full desktop), 2 (singlemonitor with STRUT, multimonitor without STRUT)
 # NetWorkAreaBehaviour=0 # [0-2]
 
 #  Network device to show status for.
-NetworkStatusDevice="*m0"
+# FreeBSD
+#NetworkStatusDevice="*m0"
+# Linux
+NetworkStatusDevice="*p*s*"
 
 #  Command to run when new mail arrives.
 # NewMailCommand=""
@@ -825,7 +828,7 @@ TaskBarAtTop=1 # 0/1
 # TaskBarCPUDelay=500 # [10-3600000]
 
 #  The width of the CPU Monitor applet in pixels.
-# TaskBarCPUSamples=20 # [2-1000]
+TaskBarCPUSamples=35 # [2-1000]
 
 #  Use double-height task bar.
 # TaskBarDoubleHeight=0 # 0/1
@@ -849,7 +852,7 @@ TaskBarAtTop=1 # 0/1
 # TaskBarMEMDelay=500 # [10-3600000]
 
 #  The width of the Memory Monitor applet in pixels.
-# TaskBarMEMSamples=20 # [2-1000]
+TaskBarMEMSamples=35 # [2-1000]
 
 #  Beep when new mail arrives.
 TaskBarMailboxStatusBeepOnNewMail=1 # 0/1
@@ -861,7 +864,7 @@ TaskBarMailboxStatusCountMessages=1 # 0/1
 # TaskBarNetDelay=500 # [10-3600000]
 
 #  The width of the Net Monitor applet in pixels.
-# TaskBarNetSamples=20 # [2-1000]
+TaskBarNetSamples=60 # [2-1000]
 
 #  Enable TaskBarShowAPMStatus if a battery is present.
 TaskBarShowAPMAuto=1 # 0/1
