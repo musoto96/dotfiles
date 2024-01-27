@@ -5,7 +5,8 @@
 
 # FreeBSD
 #xsetroot -fg \#de3163 -bg \#6695f7 -bitmap /usr/X11R6/include/X11/bitmaps/cross_weave
-xsetroot -solid purple
+# Linux
+xsetroot -fg \#de3163 -bg \#6695f7 -bitmap /usr/include/X11/bitmaps/cross_weave
 
 
 # Load resources
