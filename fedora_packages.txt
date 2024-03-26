@@ -1,1 +1,67 @@
-dnf install -y tmux NetworkManager-tui Xorg xorg-x11-xdm xorg-x11-xinit xorg-x11-drv-fbdev xorg-x11-drv-vesa icewm fvwm firefox git make thunderbird wireshark gcc xorg-x11-proto-devel llibX11-devel libX11-devel libXft-devel vim xsetroot feh ksh zathura zathura-pdf-poppler.x86_64 zathura-pdf-mupdf.x86_64 libXinerama-devel freetype-devel-2.13.1-2.fc39.x86_64 cataclysm-dda-tiles.x86_64 git xev xbacklight light bitcoin-core-desktop.x86_64 https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm steam tor xorg-x11-xbitmaps.noarch xorg-x11-drv-synaptics-legacy.x86_64
+sudo dnf install -y \ 
+  https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm \
+  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+  NetworkManager-tui
+  git \
+  glx-utils \
+  alsa-tools \
+  strace \
+  adwaita-cursor-theme.noarch \
+  bluecurve-cursor-theme.noarch \
+  breeze-cursor-theme.noarch\ 
+  la-capitaine-cursor-theme.noarch \
+  oxygen-cursor-themes.noarch \
+  guvcview \
+  calc \
+  gimp \
+  neofetch \
+  libXcursor \
+  xcursorgen \
+  autoconf \
+  automake \
+  gvim \
+  xlockmore \
+  xmag \
+  xcalc \
+  xorg-x11-fonts-ISO8859-1-75dpi.noarch \
+  xorg-x11-fonts-ISO8859-1-100dpi.noarch \
+  xorg-x11-proto-devel \
+  libX11-devel \
+  libX11-devel \
+  libXft-devel \
+  tmux \
+  NetworkManager-tui \
+  Xorg \
+  xorg-x11-xdm \
+  xorg-x11-xinit \
+  xorg-x11-drv-fbdev \
+  xorg-x11-drv-vesa \
+  icewm \
+  fvwm \
+  firefox \
+  git \
+  make \
+  thunderbird \
+  wireshark \
+  gcc \
+  xorg-x11-proto-devel \
+  llibX11-devel \
+  libX11-devel \
+  libXft-devel \
+  vim \
+  xsetroot \
+  feh \
+  ksh \
+  zathura \
+  zathura-plugins-all.x86_64 \
+  libXinerama-devel \
+  freetype-devel-2.13.1-2.fc39.x86_64 \
+  cataclysm-dda-tiles.x86_64 \
+  git \
+  xev \
+  xbacklight \
+  light \
+  bitcoin-core-desktop.x86_64 \
+  tor \
+  xorg-x11-xbitmaps.noarch \
+  xorg-x11-drv-synaptics-legacy.x86_64

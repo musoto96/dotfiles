@@ -9,8 +9,7 @@
 "
 
 " BASE
-"colorscheme habamax
-colorscheme industry
+colorscheme peachpuff
 syntax enable
 
 " Indentation
@@ -24,8 +23,8 @@ set number
 set relativenumber
 set showcmd
 set wildmenu
-"set cursorline
-"set cursorcolumn
+set cursorline
+set cursorcolumn
 noremap ,fullstat :set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%y]\ [ASCII=\%03.3b]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]<cr>
 set statusline=%F%m%r%h%w\ \|\ FMT=%{&ff}\ TYPE=%y\ ASCII=\%03.3b\ \|\ POS=%04l,%04v\ \|\ %p%%\ LEN=%L
 let g:netrw_bufsettings = 'noma nomod nonu nornu nobl nowrap ro statusline=%F%m%r%h%w\ \|\ FMT=%{&ff}\ TYPE=%y\ ASCII=\%03.3b\ \|\ POS=%04l,%04v\ \|\ %p%%\ LEN=%L'
@@ -55,3 +54,7 @@ au BufNewFile,BufRead *.astro set filetype=html
 " Apply syntax for netrw
 let g:netrw_filetypes = '.astro'
 set autochdir
+
+" Gvim
+set guifont=Ac437\ IBM\ EGA\ 8x8\ 10
+set mouse=c

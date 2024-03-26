@@ -4,10 +4,11 @@
 # Background
 # Bitmap
 #/usr/local/bin/xsetroot -bitmap /usr/local/include/X11/bitmaps/grid4
+/bin/xsetroot  -fg rgb:55/40/55 -bg rgb:70/50/70 -bitmap /usr/include/X11/bitmaps/cross_weave
 # Solid color
 #/usr/local/bin/xsetroot -solid grey
 # Image
 # FreeBSD
 #feh --bg-scale /usr/local/share/pixmaps/palm_trees.jpg
 # Linux
-feh --bg-scale /usr/include/X11/pixmaps/palm_trees.jpg
+#feh --bg-scale /usr/include/X11/pixmaps/palm_trees.jpg
