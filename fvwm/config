@@ -336,9 +336,9 @@ AddToMenu  Utilities "Utilities" Title
 +     "Reset X defaults"        Exec xrdb -load $HOME/.Xdefaults
 
 AddToMenu  Remote-logins "Remote-logins" Title
-+     "bitgolia"                Exec exec st -g 110x80 -e bash -c "ssh -L 8081:localhost:8081 -i $HOME/keys/bitgolia.rsa musoto96@34.27.172.3"
++     "bitgolia"                Exec exec st -g 130x60 -e bash -c "ssh -L 8081:localhost:8081 -i $HOME/keys/bitgolia.rsa musoto96@34.27.172.3"
 +     ""  Nop
-+     "mail relay"              Exec exec st -g 110x80 -e bash -c "ssh -i $HOME/keys/bitgolia_mail.rsa msoto@mail.bitgolia.com"
++     "mail relay"              Exec exec st -g 130x60 -e bash -c "ssh -i $HOME/keys/bitgolia_mail.rsa msoto@mail.bitgolia.com"
 
 AddToMenu Misc-Ops "Misc Config Opts" Title
 +                  "Sloppy Focus"        ChangeDefaultFocus SloppyFocus

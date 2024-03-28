@@ -68,4 +68,6 @@ sudo dnf install -y \
   blueman.x86_64 \
   ktechlab \
   openssl \
-  vsftpd
+  vsftpd \
+  xset \
+  xautolock

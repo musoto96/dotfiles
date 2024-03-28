@@ -1,5 +1,5 @@
 Xcursor.theme: breeze_cursors 
-Xcursor.size: 16
+Xcursor.size: 20
 
 xlogin*login.translations: #override \
 	Ctrl<Key>R: abort-display()\n\
