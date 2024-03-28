@@ -4,7 +4,8 @@
 # Background
 # Bitmap
 #/usr/local/bin/xsetroot -bitmap /usr/local/include/X11/bitmaps/grid4
-/bin/xsetroot  -fg rgb:55/40/55 -bg rgb:70/50/70 -bitmap /usr/include/X11/bitmaps/cross_weave
+#/bin/xsetroot  -fg rgb:55/40/55 -bg rgb:70/50/70 -bitmap /usr/include/X11/bitmaps/cross_weave
+xsetroot -fg \#7EA8BE -bg \#C09187 -bitmap /usr/include/X11/bitmaps/escherknot
 # Solid color
 #/usr/local/bin/xsetroot -solid grey
 # Image

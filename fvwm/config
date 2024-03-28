@@ -31,7 +31,7 @@
 # The following is used in various menus and also sets the terminal
 # that FvwmConsole uses. Change this to your terminal of choice
 #InfoStoreAdd terminal 'st -g 110x40+137+0'
-InfoStoreAdd terminal 'st -g 110x35'
+InfoStoreAdd terminal 'st -g 75x25'
 InfoStoreAdd menurun 'dmenu_run -fn "AcPlus IBM EGA 8x8:style=Regular:size=9"'
 ImagePath +:/usr/share/icons
 ImagePath +:/usr/share/pixmaps
@@ -201,8 +201,8 @@ Silent Key k         A      4          MouseLowerRight
 
 # Brightness
 # Linux 
-Silent Key XF86MonBrightnessUp         A     N    Exec exec /usr/bin/light -A 10
-Silent Key XF86MonBrightnessDown       A     N    Exec exec /usr/bin/light -U 10
+Silent Key XF86MonBrightnessUp         A     N    Exec exec /usr/bin/light -A 5
+Silent Key XF86MonBrightnessDown       A     N    Exec exec /usr/bin/light -U 5
 # Linux no XF86
 #Silent Key F2         A     4    Exec exec /usr/bin/light -A 10
 #Silent Key F1         A     4    Exec exec /usr/bin/light -U 10
@@ -336,9 +336,9 @@ AddToMenu  Utilities "Utilities" Title
 +     "Reset X defaults"        Exec xrdb -load $HOME/.Xdefaults
 
 AddToMenu  Remote-logins "Remote-logins" Title
-+     "bitgolia"                Exec exec st -g 110x40 -e bash -c "ssh -L 8081:localhost:8081 -i $HOME/keys/bitgolia.rsa musoto96@34.27.172.3"
++     "bitgolia"                Exec exec st -g 110x80 -e bash -c "ssh -L 8081:localhost:8081 -i $HOME/keys/bitgolia.rsa musoto96@34.27.172.3"
 +     ""  Nop
-+     "mail relay"              Exec exec st -g 110x40 -e bash -c "ssh -i $HOME/keys/bitgolia_mail.rsa msoto@mail.bitgolia.com"
++     "mail relay"              Exec exec st -g 110x80 -e bash -c "ssh -i $HOME/keys/bitgolia_mail.rsa msoto@mail.bitgolia.com"
 
 AddToMenu Misc-Ops "Misc Config Opts" Title
 +                  "Sloppy Focus"        ChangeDefaultFocus SloppyFocus
@@ -521,7 +521,7 @@ AddToFunc ChangeDefaultFocus I Style * $0
 #*FvwmButtons: (2x4 Frame 2 Swallow(UseOld) "sunclock" "Exec exec sunclock -clockgeom 110x50 -clockimage /home/msoto/pictures/worldmaps/world-map-countries.png -dock")
 # Linux
 #*FvwmButtons: (2x5 Frame 2 Swallow(UseOld) "glxgears" "Exec exec glxgears -swapinterval 7 -geometry 110x50 &")
-*FvwmButtons: (2x5 Frame 2 Swallow(UseOld) "feh" "Exec exec feh /home/msoto/pictures/cachorro.xpm &")
+*FvwmButtons: (2x5 Frame 2 Swallow(UseOld) "feh" "Exec exec feh -z -D 5 $HOME/.fvwm/pictures/*.xpm &")
 
 # 
 *FvwmButtons: (2x6 Frame 0 Container(Rows 2 Columns 2 Frame 0))
@@ -533,7 +533,7 @@ AddToFunc ChangeDefaultFocus I Style * $0
 # FreeBSD
 #*FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmsmixer" `Exec exec wmsmixer`)
 # Linux
-*FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmix" `Exec exec wmix`)
+*FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmix" `Exec exec wmix -o -1`)
 # FreeBSD
 #*FvwmButtons: (1x1 Frame 10 Swallow(UseOld,Respawn) "xbatt" `Exec exec xbatt`)
 # Linux
@@ -572,7 +572,7 @@ AddToFunc ChangeDefaultFocus I Style * $0
 *FvwmIdent: Font -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*
 
 ########################### Pager #########################################
-*FvwmPager: Geometry 80x300-1-1
+*FvwmPager: Geometry 80x300-1+450
 *FvwmPager: Back rgb:78/52/48
 *FvwmPager: Fore rgb:49/65/74
 # turn off desktop names for swallowing in above button bar example:
@@ -764,23 +764,24 @@ AddToFunc ChangeDefaultFocus I Style * $0
 DestroyFunc Launcher
 AddToFunc Launcher
 + I DestroyModuleConfig $0Launch: *
-+ I *$0Launch: Geometry 80x80
-+ I *$0Launch: Columns 1
++ I *$0Launch: Geometry 75x70
++ I *$0Launch: Columns 7
 + I *$0Launch: Rows    4
 + I *$0Launch: Frame   2
-+ I *$0Launch: (1x3+0+0, Icon $1, Action (Mouse 1) `Exec exec $2`)
-+ I *$0Launch: Pixmap none
-+ I *$0Launch: (1x1+0+3, Title $0, Action (Mouse 1) `Exec exec $2`)
++ I *$0Launch: (5x3+1+0, Icon $1, Action (Mouse 1) `Exec exec $2`)
+#+ I *$0Launch: Pixmap none      # To make icon transparent
++ I *$0Launch: (7x1+0+3, Title $0, Action (Mouse 1) `Exec exec $2`)
 #+ I Style $0Launch HandleWidth 0, NoTitle
-+ I Style $0Launch StaysonTop, Borders, NeverFocus, Sticky
-
++ I Style $0Launch StaysonBottom, !Borders, NeverFocus, Sticky, FixedSize, FixedPosition
 + I Module FvwmButtons $3 $0Launch
 + I UpdateStyles
 
 # Examples:
 #Launcher XV          xv.xpm                               xv                "-g +0+100"
 #Launcher RXVT        xterm.xpm                            "rxvt -bg black"  "-g +0+0"
-Launcher Firefox      hicolor/48x48/apps/firefox.png       firefox           "-g +0-1"
-Launcher Thunderbird  hicolor/48x48/apps/thunderbird.png   thunderbird       "-g +0-80"
-Launcher Virtualbox   hicolor/48x48/apps/virtualbox.png    virtualbox        "-g +0-160"
-Launcher Gimp         hicolor/48x48/apps/gimp.png          gimp              "-g +0-240"
+Launcher Firefox      hicolor/48x48/apps/firefox.png       firefox           "-g +10-10"
+Launcher Thunderbird  hicolor/48x48/apps/thunderbird.png   thunderbird       "-g +10-90"
+Launcher Virtualbox   hicolor/48x48/apps/virtualbox.png    virtualbox        "-g +10-170"
+Launcher Gimp         hicolor/48x48/apps/gimp.png          gimp              "-g +10-250"
+Launcher Camera       hicolor/48x48/apps/guvcview.png      guvcview          "-g +10-330"
+Launcher Ktechlab     hicolor/48x48/apps/ktechlab.png      ktechlab          "-g +10-410"

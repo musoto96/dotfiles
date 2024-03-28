@@ -64,4 +64,8 @@ sudo dnf install -y \
   bitcoin-core-desktop.x86_64 \
   tor \
   xorg-x11-xbitmaps.noarch \
-  xorg-x11-drv-synaptics-legacy.x86_64
+  xorg-x11-drv-synaptics-legacy.x86_64 \
+  blueman.x86_64 \
+  ktechlab \
+  openssl \
+  vsftpd

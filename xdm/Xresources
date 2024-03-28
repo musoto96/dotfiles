@@ -1,4 +1,4 @@
-Xcursor.theme: whiteglass
+Xcursor.theme: breeze_cursors 
 Xcursor.size: 16
 
 xlogin*login.translations: #override \
@@ -15,28 +15,32 @@ xlogin*login.translations: #override \
 	<Key>Return: set-session-argument() finish-field()
 
 xlogin*greeting: Welcome to CLIENTHOST
-xlogin*namePrompt: \040\040\040\040\040\040\040Login:
+xlogin*namePrompt: Login:
 xlogin*fail: Login incorrect or forbidden by policy
 
 #if WIDTH > 800
-#xlogin*greetFont:          -adobe-helvetica-bold-o-normal--24-240-75-75-p-138-iso8859-1
-#xlogin*font:               -adobe-helvetica-medium-r-normal--18-180-75-75-p-98-iso8859-1
-#xlogin*promptFont:         -adobe-helvetica-bold-r-normal--18-180-75-75-p-103-iso8859-1
-#xlogin*failFont:           -adobe-helvetica-bold-r-normal--18-180-75-75-p-103-iso8859-1
-xlogin*greetFont:          AcPlus IBM EGA 8x8-8
-xlogin*font:               AcPlus IBM EGA 8x8-8
-xlogin*promptFont:         AcPlus IBM EGA 8x8-8
-xlogin*failFont:           AcPlus IBM EGA 8x8-8
+# xlogin*greetFont:          -adobe-helvetica-bold-o-normal--24-240-75-75-p-138-iso8859-1
+# xlogin*font:               -adobe-helvetica-medium-r-normal--18-180-75-75-p-98-iso8859-1
+# xlogin*promptFont:         -adobe-helvetica-bold-r-normal--18-180-75-75-p-103-iso8859-1
+# xlogin*failFont:           -adobe-helvetica-bold-r-normal--18-180-75-75-p-103-iso8859-1
+xlogin*greetFont:	   AcPlus IBM EGA 8x8-20
+xlogin*font: 		   AcPlus IBM EGA 8x8-14
+xlogin*promptFont: 	   AcPlus IBM EGA 8x8-14
+xlogin*failFont: 	   AcPlus IBM EGA 8x8-10
+# xlogin*greetFont:          AcPlus IBM EGA 8x8-8
+# xlogin*font:               AcPlus IBM EGA 8x8-8
+# xlogin*promptFont:         AcPlus IBM EGA 8x8-8
+# xlogin*failFont:           AcPlus IBM EGA 8x8-8
 
-xlogin*greetFace:	   AcPlus IBM EGA 8x8-14
-xlogin*face: 		   AcPlus IBM EGA 8x8-8
-xlogin*promptFace: 	   AcPlus IBM EGA 8x8-8
-xlogin*failFace: 	   AcPlus IBM EGA 8x8
+xlogin*greetFace:	   AcPlus IBM EGA 8x8-20
+xlogin*face: 		   AcPlus IBM EGA 8x8-14
+xlogin*promptFace: 	   AcPlus IBM EGA 8x8-14
+xlogin*failFace: 	   AcPlus IBM EGA 8x8-10
 #else
-xlogin*greetFont: -adobe-helvetica-bold-o-normal--17-120-100-100-p-92-iso8859-1
-xlogin*font: -adobe-helvetica-medium-r-normal--12-120-75-75-p-67-iso8859-1
-xlogin*promptFont: -adobe-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1
-xlogin*failFont: -adobe-helvetica-bold-o-normal--14-140-75-75-p-82-iso8859-1
+xlogin*greetFont:       -adobe-helvetica-bold-o-normal--17-120-100-100-p-92-iso8859-1
+xlogin*font:            -adobe-helvetica-medium-r-normal--12-120-75-75-p-67-iso8859-1
+xlogin*promptFont:      -adobe-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1
+xlogin*failFont:        -adobe-helvetica-bold-o-normal--14-140-75-75-p-82-iso8859-1
 xlogin*greetFace:	Serif-18:bold:italic
 xlogin*face:		Helvetica-12
 xlogin*promptFace:	Helvetica-12:bold
@@ -64,11 +68,11 @@ xlogin*shdColor: black
 xlogin*hiColor: black
 #endif
 #if PLANES >= 8
-xlogin*logoFileName: /usr/local/share/pixmaps/freeBSD.xpm
+xlogin*logoFileName: /usr/share/pixmaps/retro_computer.xpm
 #else
-xlogin*logoFileName: /usr/local/share/pixmaps/xorg.xpm
+xlogin*logoFileName: /usr/share/pixmaps/retro_computer.xpm
 #endif
-xlogin*useShape: true
+xlogin*useShape:    true
 xlogin*logoPadding: 20
 
 XConsole.text.geometry:	480x130
