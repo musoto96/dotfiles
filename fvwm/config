@@ -31,7 +31,7 @@
 # The following is used in various menus and also sets the terminal
 # that FvwmConsole uses. Change this to your terminal of choice
 #InfoStoreAdd terminal 'st -g 110x40+137+0'
-InfoStoreAdd terminal 'st -g 75x25'
+InfoStoreAdd terminal 'st -g 110x35'
 InfoStoreAdd menurun 'dmenu_run -fn "AcPlus IBM EGA 8x8:style=Regular:size=9"'
 ImagePath +:/usr/share/icons
 ImagePath +:/usr/share/pixmaps
@@ -492,10 +492,9 @@ AddToFunc ChangeDefaultFocus I Style * $0
 ################## FvwmButtons button-bar ################################
 *FvwmButtons: Geometry 135x600+1+1
 *FvwmButtons: Back rgb:80/65/60
-*FvwmButtons: (Frame 2 Padding 2 2 Container(Rows 16 Columns 2 Frame 2 Padding 10 0))
+*FvwmButtons: (Frame 2 Padding 2 2 Container(Rows 20 Columns 2 Frame 2 Padding 10 0))
 
-#
-*FvwmButtons: (2x6 Frame 4 Swallow "FvwmIconMan" "Module FvwmIconMan")
+*FvwmButtons: (2x8 Frame 4 Swallow "FvwmIconMan" "Module FvwmIconMan")
 
 # leon
 #*FvwmButtons: (1x2 Frame 0 Swallow(UseOld,Respawn) "wmmoonclock" "Exec exec wmmoonclock -lat 21.120225412905064 -lon -101.6746860030482")

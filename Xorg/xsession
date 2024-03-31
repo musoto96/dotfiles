@@ -23,8 +23,8 @@ setxkbmap -option caps:swapescape &
 
 # Compositor
 #/usr/X11R6/bin/xcompmgr &
-xset dpms 900 0 0
-xautolock -time 10 -locker "xlock -mode random"
+xset dpms 0 0 0 &
+xautolock -time 10 -locker "xlock -mode random" &
 
 # Start status bar
 #/usr/local/bin/dwmblocks &
