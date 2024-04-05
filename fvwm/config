@@ -31,7 +31,7 @@
 # The following is used in various menus and also sets the terminal
 # that FvwmConsole uses. Change this to your terminal of choice
 #InfoStoreAdd terminal 'st -g 110x40+137+0'
-InfoStoreAdd terminal 'st -g 110x35'
+InfoStoreAdd terminal 'st -g 100x32'
 InfoStoreAdd menurun 'dmenu_run -fn "AcPlus IBM EGA 8x8:style=Regular:size=9"'
 ImagePath +:/usr/share/icons
 ImagePath +:/usr/share/pixmaps
@@ -490,11 +490,11 @@ AddToFunc ChangeDefaultFocus I Style * $0
 +                            I Recapture
 
 ################## FvwmButtons button-bar ################################
-*FvwmButtons: Geometry 135x600+1+1
+*FvwmButtons: Geometry 135x500+1+1
 *FvwmButtons: Back rgb:80/65/60
-*FvwmButtons: (Frame 2 Padding 2 2 Container(Rows 20 Columns 2 Frame 2 Padding 10 0))
-
-*FvwmButtons: (2x8 Frame 4 Swallow "FvwmIconMan" "Module FvwmIconMan")
+##
+*FvwmButtons: (Frame 2 Padding 2 2 Container(Rows 18 Columns 2 Frame 2 Padding 10 0))
+*FvwmButtons: (2x5 Frame 4 Swallow "FvwmIconMan" "Module FvwmIconMan")
 
 # leon
 #*FvwmButtons: (1x2 Frame 0 Swallow(UseOld,Respawn) "wmmoonclock" "Exec exec wmmoonclock -lat 21.120225412905064 -lon -101.6746860030482")
@@ -503,9 +503,8 @@ AddToFunc ChangeDefaultFocus I Style * $0
 
 *FvwmButtons: (1x2 Frame 0 Swallow(UseOld,Respawn) "wmglobe" "Exec exec wmglobe -zoom 0.7 -accel 2000 -delay 0.20")
 
-#
-*FvwmButtons: (2x8 Frame 0 Container(Rows 20 Columns 2 Frame 0))
-
+##
+*FvwmButtons: (2x10 Frame 0 Container(Rows 20 Columns 2 Frame 0))
 # leon
 *FvwmButtons: (1x3 Frame 0 Swallow(UseOld,Respawn) "wmweather+" `Exec exec wmweather+ -m -location \"21.120225412905064N 101.6746860030482W\" -station MMLO &`)
 # cdmx
@@ -522,7 +521,7 @@ AddToFunc ChangeDefaultFocus I Style * $0
 #*FvwmButtons: (2x5 Frame 2 Swallow(UseOld) "glxgears" "Exec exec glxgears -swapinterval 7 -geometry 110x50 &")
 *FvwmButtons: (2x5 Frame 2 Swallow(UseOld) "feh" "Exec exec feh -z -D 5 $HOME/.fvwm/pictures/*.xpm &")
 
-# 
+##
 *FvwmButtons: (2x6 Frame 0 Container(Rows 2 Columns 2 Frame 0))
 *FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmitime" `Exec exec wmitime &`)
 # FreeBSD
@@ -571,7 +570,9 @@ AddToFunc ChangeDefaultFocus I Style * $0
 *FvwmIdent: Font -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*
 
 ########################### Pager #########################################
-*FvwmPager: Geometry 80x300-1+450
+#*FvwmPager: Geometry 80x300-1+450
+# LOW RES
+*FvwmPager: Geometry 80x300-1+355
 *FvwmPager: Back rgb:78/52/48
 *FvwmPager: Fore rgb:49/65/74
 # turn off desktop names for swallowing in above button bar example:
@@ -763,13 +764,13 @@ AddToFunc ChangeDefaultFocus I Style * $0
 DestroyFunc Launcher
 AddToFunc Launcher
 + I DestroyModuleConfig $0Launch: *
-+ I *$0Launch: Geometry 75x70
++ I *$0Launch: Geometry 48x50
 + I *$0Launch: Columns 7
-+ I *$0Launch: Rows    4
-+ I *$0Launch: Frame   2
++ I *$0Launch: Rows    5
++ I *$0Launch: Frame   1
 + I *$0Launch: (5x3+1+0, Icon $1, Action (Mouse 1) `Exec exec $2`)
 #+ I *$0Launch: Pixmap none      # To make icon transparent
-+ I *$0Launch: (7x1+0+3, Title $0, Action (Mouse 1) `Exec exec $2`)
++ I *$0Launch: (7x2+0+3, Title $0, Action (Mouse 1) `Exec exec $2`)
 #+ I Style $0Launch HandleWidth 0, NoTitle
 + I Style $0Launch StaysonBottom, !Borders, NeverFocus, Sticky, FixedSize, FixedPosition
 + I Module FvwmButtons $3 $0Launch
@@ -778,9 +779,43 @@ AddToFunc Launcher
 # Examples:
 #Launcher XV          xv.xpm                               xv                "-g +0+100"
 #Launcher RXVT        xterm.xpm                            "rxvt -bg black"  "-g +0+0"
-Launcher Firefox      hicolor/48x48/apps/firefox.png       firefox           "-g +10-10"
-Launcher Thunderbird  hicolor/48x48/apps/thunderbird.png   thunderbird       "-g +10-90"
-Launcher Virtualbox   hicolor/48x48/apps/virtualbox.png    virtualbox        "-g +10-170"
-Launcher Gimp         hicolor/48x48/apps/gimp.png          gimp              "-g +10-250"
-Launcher Camera       hicolor/48x48/apps/guvcview.png      guvcview          "-g +10-330"
-Launcher Ktechlab     hicolor/48x48/apps/ktechlab.png      ktechlab          "-g +10-410"
+
+# SIDE MENU
+#Launcher Firefox      hicolor/48x48/apps/firefox.png       firefox           "-g +10-20"
+#Launcher Thunderbird  hicolor/48x48/apps/thunderbird.png   thunderbird       "-g +10-100"
+#Launcher Virtualbox   hicolor/48x48/apps/virtualbox.png    virtualbox        "-g +10-180"
+#Launcher Gimp         hicolor/48x48/apps/gimp.png          gimp              "-g +10-260"
+#Launcher Camera       hicolor/48x48/apps/guvcview.png      guvcview          "-g +10-340"
+#Launcher Ktechlab     hicolor/48x48/apps/ktechlab.png      ktechlab          "-g +10-420"
+#Launcher Qbittorrent  hicolor/48x48/apps/qbittorrent.png   qbittorrent       "-g +10-500"
+
+# LOW RES
+Launcher Web          hicolor/24x24/apps/firefox.png       firefox           "-g +10-20"
+Launcher Mail         hicolor/24x24/apps/thunderbird.png   thunderbird       "-g +10-80"
+Launcher Vbox         hicolor/24x24/apps/virtualbox.png    virtualbox        "-g +10-140"
+Launcher Gimp         hicolor/24x24/apps/gimp.png          gimp              "-g +10-200"
+Launcher Camera       hicolor/24x24/apps/guvcview.png      guvcview          "-g +10-260"
+Launcher Ktechlab     hicolor/24x24/apps/ktechlab.png      ktechlab          "-g +10-320"
+Launcher Qbit         hicolor/24x24/apps/qbittorrent.png   qbittorrent       "-g +10-380"
+#
+Launcher Keepass      hicolor/24x24/apps/keepass.png       keepass           "-g -10-20"
+
+DestroyFunc ActionLauncher
+AddToFunc ActionLauncher
++ I DestroyModuleConfig $0Launch: *
++ I *$0Launch: Geometry 50x50
++ I *$0Launch: Columns 7
++ I *$0Launch: Rows    5
++ I *$0Launch: Frame   1
++ I *$0Launch: (7x3+0+0, Icon $1, Action (Mouse 1) `Exec exec $2`)
++ I *$0Launch: Pixmap none      # To make icon transparent
++ I *$0Launch: (7x2+0+3, Title $0, Action (Mouse 1) `Exec exec $2`)
+#+ I Style $0Launch HandleWidth 0, NoTitle
++ I Style $0Launch StaysonBottom, !Borders, NeverFocus, Sticky, FixedSize, FixedPosition
++ I Module FvwmButtons $3 $0Launch
++ I UpdateStyles
+
+# Actions
+ActionLauncher off          actions/power.png       'st -g 25x10 -e bash -c "/home/msoto/bin/shut.sh"'    "-g -10+10"
+ActionLauncher wifi         actions/wifi.png        'st -g 50x30 -e bash -c "sudo nmtui"'    "-g -10+70"
+ActionLauncher bluetooth    actions/bluetooth.png   'st -g 50x20 -e bash -c "bluetoothctl"'  "-g -10+130"

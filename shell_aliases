@@ -1,0 +1,8 @@
+# My aliases
+alias t='tmux attach'
+alias ll='ls -l'
+alias lll='ls -tc1'
+alias xcolors='xcolors -g 700x470'
+alias feh='feh -g 800x600-1+100 -.'
+alias zathura='zathura --fork '
+alias s='su -'

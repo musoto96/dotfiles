@@ -71,4 +71,12 @@ sudo dnf install -y \
   vsftpd \
   xset \
   xautolock \
-  wmctrl 
+  wmctrl \
+  keepass \
+  inkscape \
+  qbittorrent \
+  vlc \
+  gnumeric \
+  evince \
+  zork \
+  rogue

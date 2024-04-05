@@ -26,7 +26,13 @@ unset rc
 
 set -o vi
 
+. $HOME/.aliases
+
 # Set private aliases
 if [ -f $HOME/.private_aliases ]; then
     . $HOME/.private_aliases
 fi
+
+# Custom PS1
+export PS1='$(echo -e "\033[36m.---\033[32m") $PWD 
+$(echo -e "\033[36m|_\033[33m\$: \033[00m")'

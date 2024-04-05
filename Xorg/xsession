@@ -23,6 +23,11 @@ setxkbmap -option caps:swapescape &
 
 # Compositor
 #/usr/X11R6/bin/xcompmgr &
+
+# Set resolution
+xrandr -s 1680x1050
+
+# Display power management system
 xset dpms 0 0 0 &
 xautolock -time 10 -locker "xlock -mode random" &
 
