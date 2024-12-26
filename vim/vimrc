@@ -1,15 +1,13 @@
-" 
-"        _                    
-" __   _(_)_ __ ___  _ __ ___ 
-" \ \ / / | '_ ` _ \| '__/ __|
-"  \ V /| | | | | | | | | (__ 
-"   \_/ |_|_| |_| |_|_|  \___|
-"                             
-" 
-"
+".          _                      
+".   __   _(_)_ __ ___  _ __ ___   
+".   \ \ / / | '_ ` _ \| '__/ __|  
+".    \ V /| | | | | | | | | (__   
+".     \_/ |_|_| |_| |_|_|  \___|  
+".                                 
 
 " BASE
-colorscheme peachpuff
+"colorscheme shine
+colorscheme morning
 syntax enable
 
 " Indentation
@@ -19,12 +17,14 @@ set tabstop=2
 
 " UI
 set hlsearch
+set ignorecase
 set number
 set relativenumber
 set showcmd
 set wildmenu
 set cursorline
 set cursorcolumn
+set mouse=v
 noremap ,fullstat :set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%y]\ [ASCII=\%03.3b]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]<cr>
 set statusline=%F%m%r%h%w\ \|\ FMT=%{&ff}\ TYPE=%y\ ASCII=\%03.3b\ \|\ POS=%04l,%04v\ \|\ %p%%\ LEN=%L
 let g:netrw_bufsettings = 'noma nomod nonu nornu nobl nowrap ro statusline=%F%m%r%h%w\ \|\ FMT=%{&ff}\ TYPE=%y\ ASCII=\%03.3b\ \|\ POS=%04l,%04v\ \|\ %p%%\ LEN=%L'
@@ -35,26 +35,54 @@ set laststatus=2
 
 " Keybinds
 noremap <F2> :set cursorline!<cr>:set cursorcolumn!<cr>
-noremap <F3> :set spell!<cr>
-noremap <F4> :set number!<cr>:set relativenumber!<cr>
+noremap <F3> :e ~/Documents/notes/index.txt<cr>:tabmove 0<cr>
+noremap <F4> :tabe $MYVIMRC<cr>
 noremap <F5> :source $MYVIMRC<cr>
+noremap <F6> :set number!<cr>:set relativenumber!<cr>
+noremap <F7> :set spell!<cr>
+noremap "new viwy :e ~/Documents/notes/<C-R>".txt<cr>
+noremap "o :tabe
+noremap "tmp :tabe<cr>
+noremap "! :tabe ~/Documents/notes/index.txt<cr>:source $MYVIMRC<cr>:tabmove 0<cr>
+noremap "hl :set nohlsearch!<cr>
 
 " Snippets
-noremap ,html :read ~/.vim/snippets/html/boilerplate.html<cr>kdd6j3wa
-noremap <> diw:read ~/.vim/snippets/html/tag.html<cr>kJp3lpT>i
-noremap ,rafce diw:read ~/.vim/snippets/jsx/rafce.jsx<cr>kJjf/pbg~l02jf<Space>pGf;P5ko<Tab><Tab><Tab>
+noremap "lpyr :read ~/Documents/notes/snippets/figures/pyramid.txt<cr>
+noremap "spyr :read ~/Documents/notes/snippets/figures/small-pyramid.txt<cr>
+noremap "2col :read ~/Documents/notes/snippets/tables/2col.txt<cr>
+noremap "2row :read ~/Documents/notes/snippets/tables/2row.txt<cr>
+noremap "cbr :read  ~/Documents/notes/snippets/flow/curly_brace.txt<cr>
+noremap "br :read   ~/Documents/notes/snippets/flow/brace.txt<cr>
+noremap "pad :s/.*/\=printf('%-30s', submatch(0))<cr>
+
+" Shorthands
+noremap ,ec i EC2
+noremap ,ebs i EBS
+noremap ,ecache i ElastiCache
+noremap ,ws i WorkSpace
+noremap "# o# <cr># <cr># <cr># <esc>4k
+noremap "* A<tab>* 
+
+" Center screen
+set lazyredraw
+nnoremap j jzz
+nnoremap k kzz
+nnoremap # #zz
+nnoremap * *zz
+nnoremap n nzz
+nnoremap N Nzz
 
 " Notes
-au BufNewFile,BufRead *.txt set filetype=sh
-au BufNewFile,BufRead *.astro set filetype=html
+au BufNewFile,BufRead *.txt set filetype=vim
 
 " Tree syntax for netrw
 "let g:netrw_liststyle = 3
 
 " Apply syntax for netrw
-let g:netrw_filetypes = '.astro'
 set autochdir
 
-" Gvim
-set guifont=Ac437\ IBM\ EGA\ 8x8\ 10
-set mouse=c
+" Documentation Highlight
+match DiffChange /\zs[0-9]\.[^a-zA-Z].*/
+2match DiffDelete /DOCUMENTATION/
+"3match MatchParen /\zs\.\ \ .*/
+3match QuickFixLine /\zs\.\ \ .*/

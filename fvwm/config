@@ -10,7 +10,6 @@
 #  This is the default configuration file shipped with fvwm.
 #
 #  This config file is organized as follows:
-#
 #    1: Styles
 #    2: Bindings
 #    3: Functions
@@ -31,9 +30,11 @@
 # The following is used in various menus and also sets the terminal
 # that FvwmConsole uses. Change this to your terminal of choice
 #InfoStoreAdd terminal 'st -g 110x40+137+0'
-InfoStoreAdd terminal 'st -g 100x32'
-InfoStoreAdd menurun 'dmenu_run -fn "AcPlus IBM EGA 8x8:style=Regular:size=9"'
+#InfoStoreAdd terminal 'st -g 110x35'
+InfoStoreAdd terminal 'gnome-terminal -- bash -c "neofetch -l --ascii_distro Ubuntu_small; exec bash"'
+InfoStoreAdd menurun 'dmenu_run -fn "AcPlus IBM EGA 8x8:style=Regular:size=8"'
 ImagePath +:/usr/share/icons
+ImagePath +:/opt/moisessu/NsCDE/xdg/icons/NsCDE/32x32
 ImagePath +:/usr/share/pixmaps
 ImagePath +:/usr/include/X11/bitmaps/
 ImagePath +:$[FVWM_USERDIR]/images
@@ -41,7 +42,7 @@ ImagePath +:$[FVWM_USERDIR]/images
 ###########
 # 
 # this is a bare bones sample .fvwm2rc/system.fvwm2rc file for fvwm.
-# It should be customized before install.  See other sample .fvwm2rc files
+# It should be customized before install. See other sample .fvwm2rc files
 # for hints, as well as pointers from the various links on the official
 # fvwm web page (see the FAQ).
 
@@ -66,8 +67,8 @@ EdgeScroll 100 100
 ClickTime 750
 
 DeskTopSize 1x1
-Menustyle * fvwm, Font "xft:AcPlus IBM EGA 9x14:style=Regular:size=20"
-MenuStyle * Foreground \#C09187, Background lightgray, Greyed grey40
+Menustyle * fvwm, Font "xft:AcPlus IBM EGA 9x14:style=Regular:size=16"
+MenuStyle * Foreground #35ada8, Background lightgray, Greyed grey40
 #MenuStyle * Foreground maroon, Background grey60, Greyed grey40
 
 ColormapFocus FollowsMouse
@@ -76,22 +77,21 @@ ColormapFocus FollowsMouse
 # make sure these fonts exist on your system:
 #Style *           Font -adobe-times-bold-r-*-*-18-*-*-*-*-*-*-*
 #Style *           IconFont -adobe-times-bold-r-*-*-18-*-*-*-*-*-*-*
-Style *           Font "xft:AcPlus IBM EGA 9x14:style=Regular:size=16"
-Style *           IconFont "xft:AcPlus IBM EGA 9x14:style=Regular:size=16"
+Style *           Font "xft:AcPlus IBM EGA 9x14:style=Regular:size=12"
+Style *           IconFont "xft:AcPlus IBM EGA 9x14:style=Regular:size=12"
 #Style *           HilightFore black, HilightBack palevioletred
 # Turquoise
 #Style *           HilightFore black, HilightBack #35ada8
 # Light steel blue
-Style *           HilightFore black, HilightBack #8bd2f7
+Style *           HilightFore white, HilightBack #35ada8
 Style *           BorderWidth 7, HandleWidth 7
 Style *           Icon unknown1.xpm, Color lightgrey/dimgrey
 Style *           MWMFunctions, MWMDecor, HintOverride
 #Style *           DecorateTransient, !UsePPosition
 Style *           IconBox 0 -10 -280 -1
 #Style *           FocusFollowsMouse
-#Style *           TileCascadePlacement
-Style *           MinOverlapPlacement
-#, GrabFocusOff
+#Style *           MinOverlapPlacement, GrabFocusOff
+Style *           TileCascadePlacement
 Style *           NoPPosition, ResizeOpaque
 OpaqueMoveSize    -1
 Emulate MWM
@@ -111,9 +111,11 @@ Style * FPGrabFocus
 
 # Styles for various Fvwm modules:
 Style "Fvwm*"       !Title,  Sticky, WindowListSkip
-Style "Fvwm*"       BorderWidth 2, CirculateSkipIcon, CirculateSkip
-Style "FvwmPager"   StaysOnTop, !Borders, NeverFocus, Sticky
-Style "FvwmButtons" StaysonTop, !Borders, NeverFocus, Sticky, Icon toolbox.xpm
+Style "Fvwm*"       BorderWidth 7, CirculateSkipIcon, CirculateSkip
+#Style "FvwmPager"   StaysOnTop, !Borders, NeverFocus, Sticky
+Style "FvwmPager"   !Borders, NeverFocus, Sticky
+#Style "FvwmButtons" StaysonTop, !Borders, NeverFocus, Sticky, Icon toolbox.xpm
+Style "FvwmButtons" !Borders, NeverFocus, Sticky, Icon toolbox.xpm
 Style "FvwmBanner"  StaysOnTop
 
 # Styles for your common terminal emulator programs:
@@ -122,6 +124,7 @@ Style "FvwmBanner"  StaysOnTop
 # Style "rxvt"        MWMBorder, MWMButtons
 
 # Styles for various common programs:
+Style "stalonetray" StaysOnTop, Borders, NeverFocus, Sticky
 # Style "*lock"       !Title, !Handles, Sticky, WindowListSkip, ClickToFocus
 # Style "xbiff"       !Title, Sticky, WindowListSkip, ClickToFocus
 # Style "xcalc"       Icon xcalc.xpm, !Button 2,ClickToFocus
@@ -160,9 +163,9 @@ Style "FvwmBanner"  StaysOnTop
 # Silent supresses any errors (such as keyboards with no Menu key).
 # some simple default key bindings:
 Silent Key space     A      4          Menu MenuFvwmRoot
-Silent Key Menu      A      A          Menu MenuFvwmRoot
 #Silent Key Tab       A      M          WindowList Root c c NoDeskSort, SelectOnRelease Meta_L
-Silent Key Tab       A      M          WindowList CurrentDesk c c, CurrentAtEnd, SelectOnRelease Meta_L
+#Silent Key Tab       A      M          WindowList CurrentDesk c c CurrentAtEnd, SelectOnRelease Meta_L
+Silent Key Tab       A      M          WindowList Root c c CurrentDesk, CurrentAtEnd, SelectOnRelease Meta_L
 # Switch desktops
 Silent Key 1         A      4          GotoDesk 0 0
 Silent Key 2         A      4          GotoDesk 0 1
@@ -180,7 +183,12 @@ Silent Key p         A      4          Exec exec $[infostore.menurun]
 Silent Key q         A      S4         Close
 Silent Key m         A      4          MoveWindow
 Silent Key r         A      4          ResizeWindow
-Silent Key k         A      4          MouseLowerRight
+Silent Key k         A      4          Maximize
+Silent Key j         A      4          Iconify
+Silent Key q         A      4          Lower
+Silent Key e         A      4          Raise
+#Silent Key s         A      S4         Exec exec shutter -s --exit_after_capture
+Silent Key s         A      S4         Exec exec shutter -s
 
 #Key Next         A       SCM     Next (AcceptsFocus) Focus
 #Key Prior        A       SCM     Prev (AcceptsFocus) Focus
@@ -188,8 +196,8 @@ Silent Key k         A      4          MouseLowerRight
 # Audio keys
 # Linux
 #Silent Key XF86AudioMute         A N    Exec exec /usr/bin/amixer sset Master toggle
-#Silent Key XF86AudioLowerVolume  A N    Exec exec /usr/bin/amixer sset Master 5%-
-#Silent Key XF86AudioRaiseVolume  A N    Exec exec /usr/bin/amixer sset Master 5%+
+Silent Key XF86AudioLowerVolume  A N    Exec exec /usr/bin/amixer sset Master 5%-
+Silent Key XF86AudioRaiseVolume  A N    Exec exec /usr/bin/amixer sset Master 5%+
 # Linux no XF86 keys
 #Silent Key F4         A     4    Exec exec /usr/bin/amixer sset Master toggle
 #Silent Key F5         A     4    Exec exec /usr/bin/amixer sset Master 5%-
@@ -204,15 +212,15 @@ Silent Key k         A      4          MouseLowerRight
 Silent Key XF86MonBrightnessUp         A     N    Exec exec /usr/bin/light -A 5
 Silent Key XF86MonBrightnessDown       A     N    Exec exec /usr/bin/light -U 5
 # Linux no XF86
-#Silent Key F2         A     4    Exec exec /usr/bin/light -A 10
-#Silent Key F1         A     4    Exec exec /usr/bin/light -U 10
+#Silent Key F11        A     4    Exec exec /usr/bin/light -A 10
+#Silent Key F10        A     4    Exec exec /usr/bin/light -U 10
 # FreeBSD
 #Silent Key F12        A     4    Exec exec /usr/bin/backlight incr 10
 #Silent Key F11        A     4    Exec exec /usr/bin/backlight decr 10
 
 # Lock screen
-Silent Key L           A     4    Exec exec xlock -mode random
-
+#Silent Key  l          A     S4   Exec exec /usr/bin/xscreensaver-command -lock
+Silent Key  l           A     4   Exec exec xscreensaver-command -lock
 
 # some simple default mouse bindings:
 #   for the root window:
@@ -262,6 +270,11 @@ DestroyFunc StartFunction
 AddToFunc StartFunction
  + I Module FvwmButtons
  + I Module FvwmPager 3 0
+ + I Exec exec /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd
+ + I exec xscreensaver --no-splash
+ + I exec blueman-tray
+ + I exec setxkbmap -option caps:swapescape latam 1>~/setxkbmap.out 2>&1
+ #+ I exec picom
  #+ I Exec exec /home/msoto/.fvwm/xbat.sh
  #+ I Exec exec batterycat -a
  #+ I Exec exec wmclockmon
@@ -271,8 +284,18 @@ AddToFunc StartFunction
 
 DestroyFunc InitFunction
 AddToFunc InitFunction
-+ I exec xsetroot -fg \#C09187 -bg \#7EA8BE -bitmap /usr/include/X11/bitmaps/escherknot
+#+ I exec xsetroot -fg \#7EA8BE -bg \#C09187 -bitmap /usr/include/X11/bitmaps/weird_size
+#+ I exec xsetroot -fg \#C09187 -bg \#7EA8BE -bitmap /usr/include/X11/bitmaps/escherknot
 #+ I exec xsetroot -fg \#7EA8BE -bg \#C09187 -bitmap /usr/include/X11/bitmaps/cross_weave
+# Greys
+#+ I exec xsetroot -fg \#A0AAB4 -bg \#AFAFAF -bitmap /usr/include/X11/bitmaps/escherknot
+#+ I exec xsetroot -fg grey48 -bg darkgrey -bitmap /usr/include/X11/bitmaps/cross_weave
++ I exec feh --bg-fill ~/Pictures/amazon_gwall2.png
++ I Exec exec stalonetray --geometry 1x10-1-1 --window-layer top -d none
++ I Exec exec connections
++ I exec /usr/bin/cbatticon
++ I exec shutter --min_at_startup
+
 
 # For some SM-s (like gnome-session) there is an internal background setter.
 DestroyFunc SessionInitFunction
@@ -291,21 +314,22 @@ AddToFunc MouseUpperLeft
 
 DestroyFunc ResizeWindow
 AddToFunc ResizeWindow
-+ I MouseLowerRight
++ I PipeRead 'echo WarpToWindow -1p -1p'
 + I Resize
++ I PipeRead 'echo WarpToWindow 50% 50%'
 
 DestroyFunc MoveWindow
 AddToFunc MoveWindow
 + I MouseLowerRight
 + I Move
++ I PipeRead 'echo WarpToWindow 50% 50%'
 
 ############
 # 4: Menus #
 ############
 #
 AddToMenu   RootMenu  "Root Menu"  Title
-+     "XTerm"                   Exec exec xterm
-+     "st"                      Exec exec st
++     "terminal"                Exec exec terminal
 +     ""  Nop
 +     "Remote Logins"           Popup Remote-Logins
 +     ""                        Nop
@@ -336,9 +360,10 @@ AddToMenu  Utilities "Utilities" Title
 +     "Reset X defaults"        Exec xrdb -load $HOME/.Xdefaults
 
 AddToMenu  Remote-logins "Remote-logins" Title
-+     "bitgolia"                Exec exec st -g 130x60 -e bash -c "ssh -L 8081:localhost:8081 -i $HOME/keys/bitgolia.rsa musoto96@34.27.172.3"
+#+     "bitgolia"                Exec exec st -g 130x60 -e bash -c "ssh -L 8081:localhost:8081 -i $HOME/keys/bitgolia.rsa musoto96@34.27.172.3"
++     "bitgolia"                Exec exec gnome-terminal --execute bash -c "ssh -i /home/ANT.AMAZON.COM/moisessu/keys/ec2-core101.pem ec2-user@100.24.172.218"
 +     ""  Nop
-+     "mail relay"              Exec exec st -g 130x60 -e bash -c "ssh -i $HOME/keys/bitgolia_mail.rsa msoto@mail.bitgolia.com"
+#+     "mail relay"              Exec exec st -g 130x60 -e bash -c "ssh -i $HOME/keys/bitgolia_mail.rsa msoto@mail.bitgolia.com"
 
 AddToMenu Misc-Ops "Misc Config Opts" Title
 +                  "Sloppy Focus"        ChangeDefaultFocus SloppyFocus
@@ -490,74 +515,83 @@ AddToFunc ChangeDefaultFocus I Style * $0
 +                            I Recapture
 
 ################## FvwmButtons button-bar ################################
-*FvwmButtons: Geometry 135x500+1+1
-*FvwmButtons: Back rgb:80/65/60
-##
-*FvwmButtons: (Frame 2 Padding 2 2 Container(Rows 18 Columns 2 Frame 2 Padding 10 0))
+*FvwmButtons: Geometry 150x550+1+1
+*FvwmButtons: Back #BEBEB4
+##########################################################################
+*FvwmButtons: (Frame 4 Padding 7 7 Container(Rows 33 Columns 2 Frame 2 Padding 10 0))
+##########################################################################
 *FvwmButtons: (2x5 Frame 4 Swallow "FvwmIconMan" "Module FvwmIconMan")
-
-# leon
-#*FvwmButtons: (1x2 Frame 0 Swallow(UseOld,Respawn) "wmmoonclock" "Exec exec wmmoonclock -lat 21.120225412905064 -lon -101.6746860030482")
-# cdmx
-*FvwmButtons: (1x2 Frame 0 Swallow(UseOld,Respawn) "wmmoonclock" "Exec exec wmmoonclock -lat 19.409133 -lon 99.182507")
-
-*FvwmButtons: (1x2 Frame 0 Swallow(UseOld,Respawn) "wmglobe" "Exec exec wmglobe -zoom 0.7 -accel 2000 -delay 0.20")
-
-##
+##########################################################################
 *FvwmButtons: (2x10 Frame 0 Container(Rows 20 Columns 2 Frame 0))
-# leon
-*FvwmButtons: (1x3 Frame 0 Swallow(UseOld,Respawn) "wmweather+" `Exec exec wmweather+ -m -location \"21.120225412905064N 101.6746860030482W\" -station MMLO &`)
-# cdmx
-#*FvwmButtons: (1x3 Frame 0 Swallow(UseOld,Respawn) "wmweather+" `Exec exec wmweather+ -m -location \"19.409133N 99.182507W\"  -station MMMX &`)
-
-# FreeBSD
-#*FvwmButtons: (1x3 Frame 0 Swallow(UseOld,Respawn) "wmSolar" `Exec exec wmSolar &`)
-# Linux
-*FvwmButtons: (1x3 Frame 0 Swallow(UseOld,Respawn) "wmnd" `Exec exec wmnd -i wlp2s0 -w twisted &`)
-
-# FreeBSD
-#*FvwmButtons: (2x4 Frame 2 Swallow(UseOld) "sunclock" "Exec exec sunclock -clockgeom 110x50 -clockimage /home/msoto/pictures/worldmaps/world-map-countries.png -dock")
-# Linux
-#*FvwmButtons: (2x5 Frame 2 Swallow(UseOld) "glxgears" "Exec exec glxgears -swapinterval 7 -geometry 110x50 &")
-*FvwmButtons: (2x5 Frame 2 Swallow(UseOld) "feh" "Exec exec feh -z -D 5 $HOME/.fvwm/pictures/*.xpm &")
-
-##
+    # leon
+    #*FvwmButtons: (1x2 Frame 0 Swallow(UseOld,Respawn) "wmmoonclock" "Exec exec wmmoonclock -lat 21.120225412905064 -lon -101.6746860030482")
+    # cdmx
+    *FvwmButtons: (1x3 Frame 0 Swallow(UseOld,Respawn) "wmmoonclock" "Exec exec wmmoonclock -lat 19.409133 -lon 99.182507")
+    *FvwmButtons: (1x3 Frame 0 Swallow(UseOld,Respawn) "wmglobe" "Exec exec wmglobe -zoom 0.7 -accel 2000 -delay 0.20")
+##########################################################################
+*FvwmButtons: (2x12 Frame 0 Container(Rows 20 Columns 2 Frame 0))
+    # leon
+    #*FvwmButtons: (1x3 Frame 0 Swallow(UseOld,Respawn) "wmweather+" `Exec exec wmweather+ -m -location \"21.120225412905064N 101.6746860030482W\" -station MMLO &`)
+    # cdmx
+    *FvwmButtons: (1x3 Frame 0 Swallow(UseOld,Respawn) "wmweather+" `Exec exec wmweather+ -m -location \"19.409133N 99.182507W\"  -station MMMX &`)
+    # FreeBSD
+    #*FvwmButtons: (1x3 Frame 0 Swallow(UseOld,Respawn) "wmSolar" `Exec exec wmSolar &`)
+    # Linux
+    *FvwmButtons: (1x3 Frame 0 Swallow(UseOld,Respawn) "wmnd" `Exec exec wmnd -i wlx48d8900014f1 -w twisted &`)
+##########################################################################
+    # FreeBSD
+    #*FvwmButtons: (2x4 Frame 2 Swallow(UseOld) "sunclock" "Exec exec sunclock -clockgeom 110x50 -clockimage /home/msoto/pictures/worldmaps/world-map-countries.png -dock")
+    # Linux
+    #*FvwmButtons: (2x5 Frame 2 Swallow(UseOld) "glxgears" "Exec exec glxgears -swapinterval 7 -geometry 110x50 &")
+    #*FvwmButtons: (2x5 Frame 2 Swallow(UseOld) "feh" "Exec exec feh -z -D 5 $HOME/.fvwm/pictures/*.xpm &")
+    *FvwmButtons: (2x4 Frame 2 Swallow(UseOld) "sunclock" "Exec exec sunclock -clockgeom 115x65 -clockimage ~/Pictures/world/world_r.png -dock")
+##########################################################################
 *FvwmButtons: (2x6 Frame 0 Container(Rows 2 Columns 2 Frame 0))
-*FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmitime" `Exec exec wmitime &`)
-# FreeBSD
-#*FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmcube" `Exec exec wmcube -o wmcube/cube.wmc &`)
-# Linux
-*FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmfu" `Exec exec wmfu --windowed &`)
-# FreeBSD
-#*FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmsmixer" `Exec exec wmsmixer`)
-# Linux
-*FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmix" `Exec exec wmix -o -1`)
-# FreeBSD
-#*FvwmButtons: (1x1 Frame 10 Swallow(UseOld,Respawn) "xbatt" `Exec exec xbatt`)
-# Linux
-*FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmbattery" `Exec exec wmbattery &`)
+    *FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmitime" `Exec exec wmitime &`)
+    # FreeBSD
+    #*FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmcube" `Exec exec wmcube -o wmcube/cube.wmc &`)
+    # Linux
+    #*FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmfu" `Exec exec wmfu --windowed &`)
+    #*FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmsun" `Exec exec wmsun &`)
+    *FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmcube" `Exec exec wmcube -GB -o /usr/share/wmcube/ball-solid.wmc &`)
+##########################################################################
+    # FreeBSD
+    #*FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmsmixer" `Exec exec wmsmixer`)
+    # Linux
+    #*FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmix" `Exec exec wmix -o -1`)
+    #*FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmmixer" `Exec exec wmsmixer`)
+    *FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmamixer" `Exec exec wmamixer`)
+    # FreeBSD
+    #*FvwmButtons: (1x1 Frame 10 Swallow(UseOld,Respawn) "xbatt" `Exec exec xbatt`)
+    # Linux
+    *FvwmButtons: (1x1 Frame 0 Swallow(UseOld,Respawn) "wmbattery" `Exec exec wmbattery -l 30 -c 25 -x "~/bin/process_checker.sh critical_battery.sh" &`)
+##########################################################################
+#*FvwmButtons: (2x5 Frame 0 Container(Rows 1 Columns 1 Frame 0))
+#*FvwmButtons: (2x5 Frame 2 Swallow(UseOld) "feh" "Exec exec feh -z -D 5 $HOME/.fvwm/pictures/*.xpm &")
+##########################################################################
 *FvwmButtons: (End)
-*FvwmButtons: (End)
+##########################################################################
 
 ########################## Icon Manager ####################################
 # this FvwmIconMan setup is for swallowing in above button bar example
 *FvwmIconMan: numManagers 1
 *FvwmIconMan: Resolution  page
-*FvwmIconMan: background  rgb:78/52/48
+*FvwmIconMan: background  #A0AAB4
 *FvwmIconMan: foreground  black
 #*FvwmIconMan: font        7x13bold
-*FvwmIconMan: font 5x8
+*FvwmIconMan: font 8x8
 *FvwmIconMan: format      "%t"
 *FvwmIconMan: action      Mouse   1 N sendcommand Focus, sendcommand "Iconify"
 *FvwmIconMan: action      Mouse   2 N sendcommand "Iconify 1"
 *FvwmIconMan: action      Mouse   3 N sendcommand "FvwmIdent"
 *FvwmIconMan: followfocus true
 *FvwmIconMan: sort        name
-*FvwmIconMan: plainbutton          up black bisque3
-*FvwmIconMan: selectbutton         down black bisque3
+*FvwmIconMan: plainbutton          up black grey
+*FvwmIconMan: selectbutton         down black grey
 #*FvwmIconMan: focusbutton          up yellow palevioletred
-*FvwmIconMan: focusbutton          up darkblue #8bd2f7
-*FvwmIconMan: focusandselectButton down yellow firebrick
+*FvwmIconMan: focusbutton           up yellow #35ada8
+#*FvwmIconMan: focusbutton          up darkblue #8bd2f7
+#*FvwmIconMan: focusandselectButton down yellow firebrick
 #*FvwmIconMan: dontshow icon=Untitled title=Untitled
 *FvwmIconMan: drawicons true
 *FvwmIconMan: buttongeometry  300x0
@@ -571,13 +605,15 @@ AddToFunc ChangeDefaultFocus I Style * $0
 
 ########################### Pager #########################################
 #*FvwmPager: Geometry 80x300-1+450
-# LOW RES
-*FvwmPager: Geometry 80x300-1+355
-*FvwmPager: Back rgb:78/52/48
-*FvwmPager: Fore rgb:49/65/74
+# On Right side
+#*FvwmPager: Geometry 80x300-1+355
+# On Left side
+*FvwmPager: Geometry 150x150+1+560
+*FvwmPager: Back #BEBEB4
+*FvwmPager: Fore white
 # turn off desktop names for swallowing in above button bar example:
 *FvwmPager: Font none
-*FvwmPager: Hilight rgb:85/62/55
+*FvwmPager: Hilight #A0AAB4
 *FvwmPager: Label 0 Misc
 *FvwmPager: Label 1 Maker
 *FvwmPager: Label 2 Mail
@@ -590,8 +626,12 @@ AddToFunc ChangeDefaultFocus I Style * $0
 *FvwmPager: BalloonYOffset      +2
 *FvwmPager: BalloonBorderWidth  1
 *FvwmPager: BalloonBorderColor  Black
+# On right side
 *FvwmPager: Rows 4
 *FvwmPager: Columns 1
+# On left side
+*FvwmPager: Rows 2
+*FvwmPager: Columns 2
 *FvwmPager: ReverseOrder
 
 ##########################FvwmWinList##################################
@@ -764,10 +804,12 @@ AddToFunc ChangeDefaultFocus I Style * $0
 DestroyFunc Launcher
 AddToFunc Launcher
 + I DestroyModuleConfig $0Launch: *
-+ I *$0Launch: Geometry 48x50
++ I *$0Launch: Geometry 55x70
 + I *$0Launch: Columns 7
 + I *$0Launch: Rows    5
-+ I *$0Launch: Frame   1
++ I *$0Launch: Frame   0
++ I *$0Launch: Back    #BEBEB4
++ I *$0Launch: Fore    white
 + I *$0Launch: (5x3+1+0, Icon $1, Action (Mouse 1) `Exec exec $2`)
 #+ I *$0Launch: Pixmap none      # To make icon transparent
 + I *$0Launch: (7x2+0+3, Title $0, Action (Mouse 1) `Exec exec $2`)
@@ -790,23 +832,40 @@ AddToFunc Launcher
 #Launcher Qbittorrent  hicolor/48x48/apps/qbittorrent.png   qbittorrent       "-g +10-500"
 
 # LOW RES
-Launcher Web          hicolor/24x24/apps/firefox.png       firefox           "-g +10-20"
-Launcher Mail         hicolor/24x24/apps/thunderbird.png   thunderbird       "-g +10-80"
-Launcher Vbox         hicolor/24x24/apps/virtualbox.png    virtualbox        "-g +10-140"
-Launcher Gimp         hicolor/24x24/apps/gimp.png          gimp              "-g +10-200"
-Launcher Camera       hicolor/24x24/apps/guvcview.png      guvcview          "-g +10-260"
-Launcher Ktechlab     hicolor/24x24/apps/ktechlab.png      ktechlab          "-g +10-320"
-Launcher Qbit         hicolor/24x24/apps/qbittorrent.png   qbittorrent       "-g +10-380"
+# Vertical
+Launcher Vbox         devices/computer.png               virtualbox                        "-g +85-10"
+Launcher Mail         places/mail-folder-inbox.png       thunderbird                       "-g +85-90"
+Launcher Slack        mimetypes/message.png              slack                             "-g +85-170"
+Launcher CiscoAC      devices/network-vpn.png            /opt/cisco/anyconnect/bin/vpnui   "-g +85-250"
+Launcher Camera       devices/camera-video.png           guvcview                          "-g +85-330"
+Launcher Gimp         apps/gnome-settings-theme.png      gimp                              "-g +85-410"
+Launcher Web          apps/web-browser.png               google-chrome                     "-g +10-330"
+Launcher Terminal     apps/terminal.png                  gnome-terminal                    "-g +10-410"
+#Launcher Ktechlab     devices/uninterruptible-power-supply.png  ktechlab          "-g +10-410"
+#Launcher Torrent      status/network-receive.png                qbittorrent       "-g +10-490"
 #
-Launcher Keepass      hicolor/24x24/apps/keepass.png       keepass           "-g -10-20"
+#Launcher Keepass      hicolor/24x24/apps/keepass.png       keepass           "-g -10-20"
+
+# Horiz
+#Launcher Web          apps/web-browser.png                      firefox           "-g +10-10"
+#Launcher Mail         places/mail-folder-inbox.png              thunderbird       "-g +70-10"
+#Launcher Vbox         devices/computer.png                      virtualbox        "-g +130-10"
+#Launcher Gimp         apps/gnome-settings-theme.png             gimp              "-g +190-10"
+#Launcher Camera       devices/camera-video.png                  guvcview          "-g +250-10"
+#Launcher Ktechlab     devices/uninterruptible-power-supply.png  ktechlab          "-g +310-10"
+#Launcher Torrent      status/network-receive.png                qbittorrent       "-g +370-10"
+#
+#Launcher Keepass      status/dialog-password.png                keepass           "-g -10-10"
 
 DestroyFunc ActionLauncher
 AddToFunc ActionLauncher
 + I DestroyModuleConfig $0Launch: *
-+ I *$0Launch: Geometry 50x50
++ I *$0Launch: Geometry 55x70
 + I *$0Launch: Columns 7
 + I *$0Launch: Rows    5
 + I *$0Launch: Frame   1
++ I *$0Launch: Back    #BEBEB4
++ I *$0Launch: Fore    white
 + I *$0Launch: (7x3+0+0, Icon $1, Action (Mouse 1) `Exec exec $2`)
 + I *$0Launch: Pixmap none      # To make icon transparent
 + I *$0Launch: (7x2+0+3, Title $0, Action (Mouse 1) `Exec exec $2`)
@@ -816,6 +875,14 @@ AddToFunc ActionLauncher
 + I UpdateStyles
 
 # Actions
-ActionLauncher off          actions/power.png       'st -g 25x10 -e bash -c "/home/msoto/bin/shut.sh"'    "-g -10+10"
-ActionLauncher wifi         actions/wifi.png        'st -g 50x30 -e bash -c "sudo nmtui"'    "-g -10+70"
-ActionLauncher bluetooth    actions/bluetooth.png   'st -g 50x20 -e bash -c "bluetoothctl"'  "-g -10+130"
+#ActionLauncher off      actions/power.png                        'st -g 25x10 -e bash -c "/home/msoto/bin/shut.sh"'    "-g -10+10"
+#ActionLauncher wifi      devices/network-wireless.png            'st -g 50x30 -e bash -c "sudo nmtui"'    "-g -10+5"
+ActionLauncher wifi      devices/network-wireless.png            'gnome-terminal --execute bash -c "sudo nmtui"'    "-g +10-10"
+# Ubuntu
+ActionLauncher bluetooth apps/preferences-system-bluetooth.png    blueman-manager "-g +10-90"
+ActionLauncher sound     mimetypes/sound.png                      pavucontrol     "-g +10-170"
+ActionLauncher Keepass   status/dialog-password.png               keepass2        "-g +10-250"
+#ActionLauncher bluetooth apps/preferences-system-bluetooth.png   'st -g 50x20 -e bash -c "bluetoothctl"'  "-g -10+70"
+
+AddToFunc WindowListFunc
++ I WarpToWindow 50% 50%
